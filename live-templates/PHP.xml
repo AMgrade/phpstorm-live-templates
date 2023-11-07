@@ -1,0 +1,118 @@
+<templateSet group="[Custom] PHP">
+    <template name="ds" value="declare(strict_types=1);" description="declare(strict_types = 1);" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="PHP" value="true" />
+        </context>
+    </template>
+    <template name="lr" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace $NAMESPACE$;&#10;&#10;use Illuminate\Foundation\Http\FormRequest;&#10;&#10;class $CLASS$ extends FormRequest&#10;{&#10;    public function rules(): array&#10;    {&#10;        return [$END$];&#10;    }&#10;}&#10;" description="Laravel Request" toReformat="true" toShortenFQNames="true">
+        <variable name="NAMESPACE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/php/namespace.groovy&quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+            <option name="PHP Class Member" value="false" />
+            <option name="PHP Comment" value="false" />
+            <option name="PHP Expression" value="false" />
+            <option name="PHP Interface Member" value="false" />
+            <option name="PHP Statement" value="false" />
+            <option name="PHP String Literal" value="false" />
+            <option name="PHP Trait Member" value="false" />
+        </context>
+    </template>
+    <template name="ls" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace Database\Seeders;&#10;&#10;use Illuminate\Database\Seeder;&#10;&#10;class $CLASS$ extends Seeder&#10;{&#10;    public function run(): void&#10;    {&#10;        $END$&#10;    }&#10;}&#10;" description="Laravel Seeder" toReformat="false" toShortenFQNames="true">
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+            <option name="PHP Class Member" value="false" />
+            <option name="PHP Comment" value="false" />
+            <option name="PHP Expression" value="false" />
+            <option name="PHP Interface Member" value="false" />
+            <option name="PHP Statement" value="false" />
+            <option name="PHP String Literal" value="false" />
+            <option name="PHP Trait Member" value="false" />
+        </context>
+    </template>
+    <template name="pc" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace $NAMESPACE$;&#10;&#10;class $CLASS$&#10;{&#10;    $END$&#10;}&#10;" description="class" toReformat="false" toShortenFQNames="true">
+        <variable name="NAMESPACE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/php/namespace.groovy&quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+        </context>
+    </template>
+    <template name="ph" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;" description="raw php" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+        </context>
+    </template>
+    <template name="pha" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;return [&#10;    $END$&#10;];&#10;" description="raw php array" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+        </context>
+    </template>
+    <template name="pi" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace $NAMESPACE$;&#10;&#10;interface $CLASS$&#10;{&#10;    $END$&#10;}&#10;" description="interface" toReformat="false" toShortenFQNames="true">
+        <variable name="NAMESPACE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/php/namespace.groovy&quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+        </context>
+    </template>
+    <template name="pt" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace $NAMESPACE$;&#10;&#10;trait $CLASS$&#10;{&#10;    $END$&#10;}&#10;" description="trait" toReformat="false" toShortenFQNames="true">
+        <variable name="NAMESPACE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/php/namespace.groovy&quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+        </context>
+    </template>
+    <template name="rv" value="@return void" description="return void" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="PHP Comment" value="true" />
+        </context>
+    </template>
+    <template name="lm" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace App\Models;&#10;&#10;use Illuminate\Database\Eloquent\Model;&#10;&#10;class $CLASS$ extends Model&#10;{&#10;    protected $table = '$TABLE$';&#10;&#10;    protected $fillable = [];&#10;&#10;    protected $casts = [];&#10;}&#10;" description="Laravel Model" toReformat="false" toShortenFQNames="true">
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+        <variable name="TABLE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/laravel/model-table.groovy&quot;, snakeCase(CLASS))" defaultValue="" alwaysStopAt="false" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+        </context>
+    </template>
+    <template name="lcc" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace $NAMESPACE$;&#10;&#10;use Illuminate\Console\Command;&#10;&#10;class $CLASS$ extends Command&#10;{&#10;    protected $signature = '$SIGNATURE$';&#10;&#10;    protected $description = '$DESCRIPTION$';&#10;&#10;    public function handle(): int&#10;    {&#10;        $END$&#10;&#10;        return self::SUCCESS;&#10;    }&#10;}&#10;" description="Laravel Command" toReformat="true" toShortenFQNames="true">
+        <variable name="NAMESPACE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/php/namespace.groovy&quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+        <variable name="SIGNATURE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/laravel/command-signature.groovy&quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+            <option name="PHP Class Member" value="false" />
+            <option name="PHP Comment" value="false" />
+            <option name="PHP Expression" value="false" />
+            <option name="PHP Interface Member" value="false" />
+            <option name="PHP Statement" value="false" />
+            <option name="PHP String Literal" value="false" />
+            <option name="PHP Trait Member" value="false" />
+        </context>
+    </template>
+    <template name="lc" value="&lt;?php&#10;&#10;declare(strict_types=1);&#10;&#10;namespace $NAMESPACE$;&#10;&#10;use Illuminate\Routing\Controller;&#10;&#10;class $CLASS$ extends Controller&#10;{&#10;    public function $METHOD$()&#10;    {&#10;        $END$&#10;    }&#10;}&#10;" description="Laravel Controller" toReformat="true" toShortenFQNames="true">
+        <variable name="NAMESPACE" expression="groovyScript(&quot;_GROOVY_PATH_/groovy/php/namespace.groovy&quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="CLASS" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+        <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="HTML" value="true" />
+            <option name="PHP" value="true" />
+            <option name="PHP Class Member" value="false" />
+            <option name="PHP Comment" value="false" />
+            <option name="PHP Expression" value="false" />
+            <option name="PHP Interface Member" value="false" />
+            <option name="PHP Statement" value="false" />
+            <option name="PHP String Literal" value="false" />
+            <option name="PHP Trait Member" value="false" />
+        </context>
+    </template>
+</templateSet>
